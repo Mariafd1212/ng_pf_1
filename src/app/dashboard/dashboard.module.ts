@@ -8,8 +8,8 @@ import { IconsComponent } from './pages/icons/icons.component';
 import { IconsModule } from './pages/icons/icons.module';
 import { FormsModule } from '@angular/forms';
 import { FormsComponent } from './pages/forms/forms.component';
-
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -22,8 +22,9 @@ import { FormsComponent } from './pages/forms/forms.component';
     MatSidenavModule,
     MatCardModule,
     MatButtonModule,
-    IconsModule,
-    FormsModule
+    MatIconModule,
+    FormsModule ,
+    MatToolbarModule
   ],
   exports: [DashboardComponent],
 })
