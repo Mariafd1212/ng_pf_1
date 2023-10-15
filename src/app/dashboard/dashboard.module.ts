@@ -4,28 +4,26 @@ import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { IconsComponent } from './pages/icons/icons.component';
 import { IconsModule } from './pages/icons/icons.module';
-import { FormsModule } from '@angular/forms';
-import { FormsComponent } from './pages/forms/forms.component';
+import { FormsModule as FormsPageModule } from './pages/forms/forms.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 
 
-
 @NgModule({
-  declarations: [
-    DashboardComponent, FormsComponent
-  ],
+  declarations: [DashboardComponent],
   imports: [
     CommonModule,
     MatSidenavModule,
     MatCardModule,
     MatButtonModule,
+    IconsModule,
+    FormsPageModule,
+    MatToolbarModule,
     MatIconModule,
-    FormsModule ,
-    MatToolbarModule
+    
+
   ],
   exports: [DashboardComponent],
 })
-export class DashboardModule { }
+export class DashboardModule {}

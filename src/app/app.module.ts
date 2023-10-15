@@ -18,7 +18,8 @@ import { FormsModule } from './dashboard/pages/forms/forms.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    BrowserModule
+    BrowserModule, 
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

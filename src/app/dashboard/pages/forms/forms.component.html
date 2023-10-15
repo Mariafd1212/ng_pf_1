@@ -1,11 +1,105 @@
-<div class="row">
-    <div class="col-6">
-        <mat-form-field class="example-form-field">
+<div class="center-container">
+    <form [formGroup]="userForm">
+        <h1 class="title-forms">Sign up</h1>
+        <div class="row-1">
+            <!-- Campo de nombre -->
+        <div class="col">
+            <mat-form-field appearance="outline" style="width: 300px">
             <mat-label>Nombre</mat-label>
-            <input matInput type="text">
-            <button ></button>
-        </mat-form-field>
-    </div>
+            <input formControlName="name" matInput >
+            <mat-error>
+                <span *ngIf="nameControl?.hasError('minlength')">
+                El campo debe tener al menos 3 caracteres
+                </span>
+                <span *ngIf="nameControl?.hasError('maxlength')">
+                El campo debe tener al maximo 15 caracteres
+                </span>
+                <span *ngIf="nameControl?.hasError('required')">
+                Debe completar este campo
+                </span>
+            </mat-error>
+    
+            <mat-hint>Complete con su nombre</mat-hint>
+            </mat-form-field>
+        </div>
+    
+        <!-- Campo de apellido -->
+        <div class="col">
+            <mat-form-field appearance="outline" style="width: 300px;">
+            <mat-label>Apellido</mat-label>
+            <input formControlName="lastName" matInput >
+            <mat-error>
+                <span *ngIf="lastNameControl?.hasError('minlength')">
+                El campo debe tener al menos 3 caracteres
+                </span>
+                <span *ngIf="lastNameControl?.hasError('maxlength')">
+                El campo debe tener al maximo 15 caracteres
+                </span>
+                <span *ngIf="lastNameControl?.hasError('required')">
+                Debe completar este campo
+                </span>
+            </mat-error>
+    
+            <mat-hint>Complete con su apellido</mat-hint>
+            </mat-form-field>
+        </div>
+    
+ <!-- Campo de edad -->
+<div class="col">
+    <mat-form-field appearance="outline" style="width: 150px;">
+    <mat-label>Edad</mat-label>
+    <input formControlName="age" matInput >
+    <mat-error>
+        <span *ngIf="ageControl?.hasError('required')">
+            Debe completar este campo
+        </span>
+        <span *ngIf="ageControl?.hasError('pattern')">
+            El valor es inválido
+        </span>
+        <span *ngIf="ageControl?.hasError('maxlength')">
+            El valor es demasiado largo
+        </span>
+    </mat-error>
+    <mat-hint>Complete con su edad</mat-hint>
+    </mat-form-field>
 </div>
 
-
+<!-- Campo de correo electrónico -->
+<div class="col">
+    <mat-form-field appearance="outline" style="width: 300px;">
+    <mat-label>Correo electrónico</mat-label>
+    <input formControlName="mail" matInput >
+    <mat-error>
+        <span *ngIf="mailControl?.hasError('required')">
+            Debe completar este campo
+        </span>
+        <span *ngIf="mailControl?.hasError('email')">
+            El correo electrónico es inválido
+        </span>
+        <span *ngIf="mailControl?.hasError('maxlength')">
+            El correo excede el límite de caracteres
+        </span>
+        <span *ngIf="mailControl?.hasError('minlength')">
+            El correo es demasiado corto
+        </span>
+    </mat-error>
+    <mat-hint>Complete con su correo electrónico</mat-hint>
+    </mat-form-field>
+</div>
+        <!-- Campo de Idiomas -->
+        <div class="col-12">
+            <mat-form-field>
+            <mat-label>Idioma</mat-label>
+            <mat-select disableRipple>
+                <mat-option value="1">Inglés</mat-option>
+                <mat-option value="2">Chino</mat-option>
+                <mat-option value="3">Japonés</mat-option>
+                <mat-option value="3">Francés</mat-option>
+                <mat-option value="3">Alemán</mat-option>
+            </mat-select>
+        </mat-form-field>
+        </div>
+        </div>
+        <button mat-raised-button color="primary">Sign up</button>
+    </form>
+</div>
