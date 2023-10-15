@@ -5,11 +5,19 @@ import { IconsModule } from '../dashboard/pages/icons/icons.module';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FullnamePipe } from './pipes/fullname.pipe';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+
+
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FullnamePipe
+  ],
   imports: [
     CommonModule
   ],
@@ -20,7 +28,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     MatIconModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule,
+    IconsModule,
+    MatTableModule,
+    FullnamePipe
+    
   ]
 })
 export class SharedModule { }

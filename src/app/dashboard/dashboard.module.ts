@@ -9,6 +9,9 @@ import { FormsModule as FormsPageModule } from './pages/forms/forms.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { UsersModule } from './pages/users/users.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { UsersTableComponent } from '../dashboard/pages/users/components/users-table/users-table.component';
+
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { UsersModule } from './pages/users/users.module';
     FormsPageModule,
     MatToolbarModule,
     MatIconModule,
-    UsersModule
+    UsersModule,
+    
+    
+
   ],
   exports: [DashboardComponent],
 })

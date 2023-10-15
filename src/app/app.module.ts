@@ -7,6 +7,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { IconsComponent } from './dashboard/pages/icons/icons.component';
 import { FormsModule } from './dashboard/pages/forms/forms.module';
+import { UsersTableComponent } from './dashboard/pages/users/components/users-table/users-table.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { FormsModule } from './dashboard/pages/forms/forms.module';
     BrowserAnimationsModule,
     FormsModule,
     BrowserModule, 
-    DashboardModule
+    DashboardModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
