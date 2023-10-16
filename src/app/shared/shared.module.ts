@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { IconsModule } from '../dashboard/pages/icons/icons.module';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -10,8 +9,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FullnamePipe } from './pipes/fullname.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
-
-
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -30,10 +29,10 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     MatDialogModule,
     MatMenuModule,
-    IconsModule,
     MatTableModule,
-    FullnamePipe
-    
+    FullnamePipe,
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }
