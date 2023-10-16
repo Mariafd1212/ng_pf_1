@@ -33,15 +33,33 @@ export class UsersComponent {
 
   constructor(private matDialog: MatDialog) {}
 
-  openUsersDialog(): void {this.matDialog.open(UsersDialogComponent)
+  openUsersDialog(): void {this.matDialog
+    .open(UsersDialogComponent)
     .afterClosed()
     .subscribe({
       next:(v) => {
-        console.log('VALOR: ', v);
+
         if (!!v) {
-          this.userName = v;
+          this.users = [
+            ...this.users,
+            {
+              ...v,
+              id: new Date().getTime(),
+            },
+          ];
         }
       }
+  });
+  }
+
+  onEditUser(user: User): void {
+    this.matDialog.open(UsersDialogComponent, {
+      data: user,
     });
+  }
+  onDeleteUser(userId: number): void {
+    if (confirm('Esta seguro de eliminar el usuario?')){
+      this.users = this.users.filter((u) => u.id !== userId);}
+    
   }
 }

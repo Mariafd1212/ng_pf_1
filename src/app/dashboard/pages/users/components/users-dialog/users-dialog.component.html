@@ -40,11 +40,11 @@
                 <mat-form-field class="w-100, py-3" appearance="outline">
                     <mat-label>Curso</mat-label>
                     <mat-select>
-                        <mat-option value="option">Inglés</mat-option>
-                        <mat-option value="option">Chino</mat-option>
-                        <mat-option value="option">Japonés</mat-option>
-                        <mat-option value="option">Francés</mat-option>
-                        <mat-option value="option">Alemán</mat-option>
+                        <mat-option value="ingles">Inglés</mat-option>
+                        <mat-option value="chino">Chino</mat-option>
+                        <mat-option value="japones">Japonés</mat-option>
+                        <mat-option value="frances">Francés</mat-option>
+                        <mat-option value="aleman">Alemán</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -53,6 +53,7 @@
 </div>
 
 <div mat-dialog-actions>
-    <button (click)="onSubmit()" mat-button>Guardar</button>
+
     <button [mat-dialog-close]="" mat-button>Cancelar</button>
+    <button (click)="onSubmit()" mat-button>Guardar</button>
 </div>
