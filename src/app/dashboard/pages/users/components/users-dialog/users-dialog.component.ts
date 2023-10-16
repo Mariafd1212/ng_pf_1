@@ -1,34 +1,31 @@
-import { DialogRef } from '@angular/cdk/dialog';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import {MatDialogModule} from '@angular/material/dialog';
-
+import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-users-dialog',
   templateUrl: './users-dialog.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class UsersDialogComponent {
   userForm: FormGroup;
-  
-  constructor(private fb: FormBuilder,
-    private MatDialogRef: MatDialogRef<UsersDialogComponent>
-    ) {
+
+  constructor(private fb: FormBuilder, private dialogRef: MatDialogRef<UsersDialogComponent>) {
     this.userForm = this.fb.group({
-      name: [' ', Validators.required],
-      lastName: [' ', Validators.required],
-      email: [' ', Validators.email, Validators.required],
-    })
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      age: ['', [Validators.required, Validators.pattern(/^[1-9]\d*$/)]],
+      course: ['', Validators.required]
+    });
   }
 
   onSubmit(): void {
     if (this.userForm.invalid) {
-      this.userForm.markAsUntouched();
+      this.userForm.markAllAsTouched();
     } else {
-      this.MatDialogRef.close(this.userForm.value)
+      this.dialogRef.close(this.userForm.value);
     }
   }
+  
 }
