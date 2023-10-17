@@ -12,12 +12,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
+import { Headers20Directive } from './directives/headers20.directive';
 
 
 @NgModule({
   declarations: [
     FullnamePipe,
-    FormErrorsPipe
+    FormErrorsPipe,
+    Headers20Directive
   ],
   imports: [
     CommonModule
@@ -35,7 +37,8 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
     FullnamePipe,
     MatInputModule,
     MatSelectModule,
-    FormErrorsPipe
+    FormErrorsPipe,
+    Headers20Directive
   ]
 })
 export class SharedModule { }
