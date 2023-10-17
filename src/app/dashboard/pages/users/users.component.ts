@@ -26,7 +26,23 @@ export class UsersComponent {
     lastName: 'Faria',
     email: 'deiby@gmail.com',
     age: 32,
-    course: 'Ingles'
+    course: 'Inglés'
+  },
+  {
+    id: 3,
+    name: 'Paula',
+    lastName: 'Wong',
+    email: 'paula@gmail.com',
+    age: 40,
+    course: 'Francés'
+  },
+  {
+    id: 3,
+    name: 'Fernando',
+    lastName: 'Martinez',
+    email: 'fernan2@gmail.com',
+    age: 30,
+    course: 'Alemán'
   }
 ]
 
@@ -52,14 +68,19 @@ export class UsersComponent {
   });
   }
 
+  guardarUsuario(user: User) {
+  }
+
   onEditUser(user: User): void {
     this.matDialog.open(UsersDialogComponent, {
       data: user,
     });
   }
+
   onDeleteUser(userId: number): void {
-    if (confirm('Esta seguro de eliminar el usuario?')){
-      this.users = this.users.filter((u) => u.id !== userId);}
-    
+    if (confirm('¿Está seguro de eliminar el usuario?')) {
+      this.users = this.users.filter((u) => u.id !== userId);
+      
+    }
   }
 }

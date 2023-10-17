@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DataSource } from '@angular/cdk/collections';
 import { User } from '../../models';
-
 
 @Component({
   selector: 'app-users-table',
@@ -19,4 +17,5 @@ export class UsersTableComponent {
   editUser = new EventEmitter<User>();
   
   displayedColumns = ['id','fullname', 'email', 'age', 'course', 'actions'];
+
 }

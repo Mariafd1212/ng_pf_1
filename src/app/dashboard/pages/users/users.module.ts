@@ -16,7 +16,7 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
   ],
   exports: [
     UsersComponent

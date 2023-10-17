@@ -23,6 +23,7 @@ import { UsersTableComponent } from './dashboard/pages/users/components/users-ta
     BrowserModule, 
     DashboardModule,
     
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

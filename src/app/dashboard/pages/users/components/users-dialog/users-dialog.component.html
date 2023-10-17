@@ -1,6 +1,10 @@
-<h1 mat-dialog-title class="p-2">Crear Usuario</h1>
-<div mat-dialog-content class="px-5" >
-    <!-- Contenido -->
+<h1 mat-dialog-title>
+    {{ user ? "Editando usuario" : "Crear usuario" }}
+  </h1>
+  
+  <div mat-dialog-content>
+    <!-- Contenido... -->
+  
     <form [formGroup]="userForm">
         <div class="row-1">
             <!-- Control name -->
@@ -35,25 +39,24 @@
                     <mat-error>{{ userForm.get("lastName")?.errors | formErrors }}</mat-error>
                 </mat-form-field>
             </div>
-            <!-- Control course -->
-            <div class="col">
-                <mat-form-field class="w-100, py-3" appearance="outline">
-                    <mat-label>Curso</mat-label>
-                    <mat-select>
-                        <mat-option value="ingles">Inglés</mat-option>
-                        <mat-option value="chino">Chino</mat-option>
-                        <mat-option value="japones">Japonés</mat-option>
-                        <mat-option value="frances">Francés</mat-option>
-                        <mat-option value="aleman">Alemán</mat-option>
-                    </mat-select>
-                </mat-form-field>
-            </div>
+        <!-- Control course -->
+        <div class="col-12">
+            <mat-form-field class="w-100, py-3" appearance="outline">
+                <mat-label>Curso</mat-label>
+                <mat-select formControlName="course">
+                    <mat-option value="ingles">Inglés</mat-option>
+                    <mat-option value="chino">Chino</mat-option>
+                    <mat-option value="japones">Japonés</mat-option>
+                    <mat-option value="frances">Francés</mat-option>
+                    <mat-option value="aleman">Alemán</mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
+    </div>
     </form>
 </div>
 
 <div mat-dialog-actions>
-
-    <button [mat-dialog-close]="" mat-button>Cancelar</button>
+    <button mat-dialog-close mat-button>Cancelar</button>
     <button (click)="onSubmit()" mat-button>Guardar</button>
 </div>
