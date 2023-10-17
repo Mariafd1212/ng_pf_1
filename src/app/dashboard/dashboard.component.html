@@ -2,11 +2,18 @@
 <mat-drawer-container class="example-container" autosize>
 <!-- Sidebar -->
 <mat-drawer #drawer class="example-sidenav" mode="over" position="start">
-<p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-<button (click)="showFiller = !showFiller" mat-raised-button>
-    Toggle extra text
-</button>
+<p>Menu</p>
+<ul>
+    <li>Perfil</li>
+    <li>Usuarios registrados</li>
+    <li>Programa de estudio</li>
+    <li>Calificaciones</li>
+    <li>Horarios</li>
+    <li>Examenes</li>
+    <li>Beneficios</li>
+    <li>Configuración</li>
+  </ul>
+  
 </mat-drawer>
 
     <!-- Boton de toggle contenido-->

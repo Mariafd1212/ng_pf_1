@@ -22,3 +22,14 @@
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
 }
+
+li {
+  list-style: none;
+}
+
+li:hover {
+  background: rgb(168, 16, 110);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+}
