@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UsersTableComponent } from '../dashboard/pages/users/components/users-table/users-table.component';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 
@@ -27,8 +28,8 @@ import { UsersTableComponent } from '../dashboard/pages/users/components/users-t
     MatToolbarModule,
     MatIconModule,
     UsersModule,
-    
-    
+    SharedModule,
+    TranslateModule
 
   ],
   exports: [DashboardComponent],

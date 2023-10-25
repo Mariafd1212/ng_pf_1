@@ -14,7 +14,7 @@ export class Headers20Directive {
     this.Renderer.setStyle(
       this.ElementRef.nativeElement,
       'font-size',
-      '20px'
+      '20 px'
     );
   }
 }

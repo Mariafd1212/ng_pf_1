@@ -10,9 +10,10 @@ import { FullnamePipe } from './pipes/fullname.pipe';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { Headers20Directive } from './directives/headers20.directive';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -20,6 +21,8 @@ import { Headers20Directive } from './directives/headers20.directive';
     FullnamePipe,
     FormErrorsPipe,
     Headers20Directive
+    
+    
   ],
   imports: [
     CommonModule
@@ -38,7 +41,10 @@ import { Headers20Directive } from './directives/headers20.directive';
     MatInputModule,
     MatSelectModule,
     FormErrorsPipe,
-    Headers20Directive
+    Headers20Directive,
+    MatSelectModule,
+    TranslateModule,
+    
   ]
 })
 export class SharedModule { }
