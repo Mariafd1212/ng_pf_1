@@ -1,62 +1,33 @@
-<!-- Container -->
+<!-- CONTENEDOR -->
 <mat-drawer-container class="example-container" autosize>
-  <!-- Sidebar -->
-  <mat-drawer #drawer class="example-sidenav" mode="over" position="start">
-    <p>Menu</p>
-    <ul>
-      <li>Perfil</li>
-      <li>Usuarios registrados</li>
-      <li>Programa de estudio</li>
-      <li>Calificaciones</li>
-      <li>Horarios</li>
-      <li>Examenes</li>
-      <li>Beneficios</li>
-      <li>Configuración</li>
-    </ul>
+  <!-- SIDEBAR -->
+  <mat-drawer
+    style="width: 200px"
+    [opened]="showSidebar"
+    #drawer
+    class="example-sidenav"
+    mode="side"
+    position="start"
+  >
+    <app-sidebar></app-sidebar>
   </mat-drawer>
+  <!-- SIDEBAR -->
 
-  <!-- Boton de toggle contenido-->
+  <!-- CONTENIDO -->
   <div class="example-sidenav-content">
-    <!-- Toolbar -->
-    <mat-toolbar color="primary">
-      <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
-        (click)="drawer.toggle()"
-      >
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>
-        {{ 'hello' | translate }}
-      </span>
-
-      <span class="example-spacer"></span>
-      <button
-        mat-icon-button
-        class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon"
-      >
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-      >
-        <mat-icon>share</mat-icon>
-      </button>
-      <mat-select (selectionChange)="changeLanguage($event)">
-        <mat-option value="es">es</mat-option>
-        <mat-option value="en">en</mat-option>
-      </mat-select>
-    </mat-toolbar>
+    <!-- TOOLBAR -->
+    <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
 
     <!-- <app-icons></app-icons> -->
+    <main style="padding: 1rem">
+      <!-- PAGINA -->
+      <!-- <app-forms></app-forms> -->
+      <!-- <app-users></app-users> -->
+      <router-outlet></router-outlet>
 
-    <!-- <main style="padding: 1rem">
-        <app-forms></app-forms>
-    </main> -->
-    <app-users></app-users>
+      <!-- <button (click)="showHome = !showHome">Mostrar home</button> -->
+      <!-- <app-home *ngIf="showHome"></app-home> -->
+    </main>
   </div>
+  <!-- CONTENIDO -->
 </mat-drawer-container>
