@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GradesComponent } from './grades.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    GradesComponent
+  ],
   imports: [
     CommonModule
   ]
 })
-export class RoutingModule { }
+export class GradesModule { }
