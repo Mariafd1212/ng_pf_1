@@ -6,6 +6,7 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './dashboard/pages/home/home.component';
 import { UsersComponent } from './dashboard/pages/users/users.component';
 import { CoursesComponent } from './dashboard/pages/courses/courses.component';
+import { UserDetailComponent } from './dashboard/pages/users/components/user-detail/user-detail.component';
 
 
 
@@ -26,6 +27,12 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
+        children: [
+          {
+            path: 'detail/:id',
+            component: UserDetailComponent
+          }
+        ]
       },
 
       {
