@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = '47845-pf-baez';
+  title = '47845-pf-flores';
 
-  constructor(private translateService: TranslateService) {
-    this.translateService.setDefaultLang('es');
-    this.translateService.use('es');
-  }
+
 }

@@ -22,11 +22,8 @@ export class UsersTableComponent {
   constructor(private router: Router)  {}
 
   goToDetail(userId: number): void {
-    this.router.navigate(['dashboard','courses', 'detail', userId], {
-      queryParams: {
-        search: 'learning languages'
-      }
-    });
+    this.router.navigate(['dashboard', 'users', 'detail', userId]);
   }
+}  
+  
 
-}

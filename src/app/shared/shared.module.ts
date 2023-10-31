@@ -13,7 +13,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { Headers20Directive } from './directives/headers20.directive';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
@@ -45,7 +44,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FormErrorsPipe,
     Headers20Directive,
     MatSelectModule,
-    TranslateModule,
     MatDatepickerModule
     
     

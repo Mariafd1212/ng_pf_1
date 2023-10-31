@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user-detail.component.scss']
 })
 export class UserDetailComponent {
-  constructor(private activatedRoute: ActivatedRoute){
-    console.log(this.activatedRoute.snapshot.params);
+  constructor(private activatedRoute: ActivatedRoute) {
+    console.log(this.activatedRoute.snapshot.params['id']);
   }
 }

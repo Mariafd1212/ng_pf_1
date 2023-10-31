@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,13 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-  showSidebar = true;
+  showSidebar = false;
   style = 'bolder';
   showHome = true;
 
-  constructor(private translateService: TranslateService) {}
-
-  changeLanguage(ev: MatSelectChange): void {
-    this.translateService.use(ev.value);
-  }
 }

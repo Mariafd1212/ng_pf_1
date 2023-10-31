@@ -11,7 +11,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { UsersTableComponent } from './pages/users/components/users-table/users-table.component';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
@@ -33,7 +32,6 @@ import { CoursesModule } from './pages/courses/courses.module';
     MatIconModule,
     UsersModule,
     SharedModule,
-    TranslateModule,
     HomeModule,
     RouterModule,
     MatListModule,
