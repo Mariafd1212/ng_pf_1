@@ -8,11 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  user: any; 
+  password: string = ''; 
+
   constructor(private authService: AuthService, private router: Router) {}
 
   login(): void {
     this.authService.login().subscribe({
       next: (authUser) => {
+        this.user = authUser;
+        this.password = ''; 
         if (!!authUser) {
           this.router.navigate(['/dashboard']);
         }

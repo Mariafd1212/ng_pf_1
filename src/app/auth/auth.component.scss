@@ -1,5 +1,38 @@
+/* Estilo para el contenedor del formulario */
+.login-card {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para el formulario de inicio de sesión */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo para los campos de entrada de texto */
+.form-field {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Estilo para el botón de inicio de sesión */
+.login-button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Estilo para el título "Iniciar sesión" */
+h2 {
+  margin: 0;
+}
+
+/* Estilo para centrar el contenido verticalmente y horizontalmente */
 main {
-    height: 100vh;
-    width: 100%;
-    background-color: indigo;
-  }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

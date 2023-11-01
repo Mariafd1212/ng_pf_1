@@ -1,5 +1,36 @@
-<p>login works!</p>
-
-<button (click)="login()" mat-flat-button color="primary">
-  Iniciar sesión
-</button>
+<main class="d-flex justify-content-center align-items-center">
+  <mat-card class="login-card">
+    <mat-card-content>
+      <h2>Iniciar sesión</h2>
+      <form (submit)="login()" class="login-form">
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            placeholder="Usuario"
+            [(ngModel)]="user"
+            name="user"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field class="form-field">
+          <input
+            matInput
+            type="password"
+            placeholder="Contraseña"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </mat-form-field>
+        <button
+          mat-flat-button
+          color="primary"
+          type="submit"
+          class="login-button"
+        >
+          Iniciar sesión
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</main>
