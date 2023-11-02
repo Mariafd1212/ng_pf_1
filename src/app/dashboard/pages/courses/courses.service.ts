@@ -7,13 +7,13 @@ export class CoursesService {
   courses: Course[] = [
     {
       id: 1,
-      name: 'Javascript',
+      name: 'Inglés',
       endDate: new Date(),
       startDate: new Date(),
     },
     {
       id: 2,
-      name: 'Desarrollo web',
+      name: 'Japonés',
       endDate: new Date(),
       startDate: new Date(),
     },

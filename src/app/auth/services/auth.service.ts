@@ -1,10 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { User } from 'src/app/dashboard/pages/users/models';
 import { environment } from 'src/environments/environment.local';
 import { LoginPayload } from '../models';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -16,48 +17,33 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  login(payload: LoginPayload): void {
-    // const headers = new HttpHeaders({
-    //   token: localStorage.getItem('token') || 'NO HAY TOKEN',
-    // });
-    this.httpClient
-      .get<User[]>(
-        `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`
-      )
-      .subscribe({
-        next: (response) => {
-          if (!response.length) {
-            alert('Usuario o contrasena invalidos');
-          } else {
-            const authUser = response[0];
-            this._authUser$.next(authUser);
-            localStorage.setItem('token', authUser.token);
-            this.router.navigate(['/dashboard/home']);
-          }
-        },
-        error: (err) => {
-          alert('Error de conexion');
-        },
-      });
+  login(payload: LoginPayload): Observable<User[]> {
+    return this.httpClient.get<User[]>(
+      `${environment.baseUrl}/users?email=${payload.email}&password=${payload.password}`
+    );
   }
 
   verifyToken(): Observable<boolean> {
-    return this.httpClient
-      .get<User[]>(
-        `${environment.baseUrl}/users?token=${localStorage.getItem('token')}`
-      )
-      .pipe(
-        map((users) => {
-          if (!users.length) {
-            return false;
-          } else {
-            const authUser = users[0];
-            this._authUser$.next(authUser);
-            localStorage.setItem('token', authUser.token);
-            return true;
-          }
-        })
-      );
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      // Verificar si el token es válido haciendo una solicitud al servidor
+      return this.httpClient
+        .get<User[]>(`${environment.baseUrl}/users?token=${token}`)
+        .pipe(
+          map((users) => {
+            // Si se encuentra al menos un usuario con el token, considerarlo válido
+            return users.length > 0;
+          })
+        );
+    } else {
+      // Si no hay token en el almacenamiento local, considerarlo inválido
+      return of(false);
+    }
+  }
+
+  updateAuthUser(user: User | null): void {
+    this._authUser$.next(user);
   }
 
   logout(): void {
