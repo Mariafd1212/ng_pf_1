@@ -5,4 +5,7 @@ export interface User {
     email: string;
     age: number;
     course: string;
+    token: string;
+    role: string;
 };
+

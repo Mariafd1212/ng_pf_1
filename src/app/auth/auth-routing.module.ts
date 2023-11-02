@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { AuthComponent } from './auth.component';
+import { LoginRoutingModule } from './pages/login/login-routing.module';
 
 const routes: Routes = [
   {
@@ -10,11 +11,14 @@ const routes: Routes = [
       {
         path: 'login',
         loadChildren: () =>
-          import('./pages/login/login.module').then((m) => m.LoginModule),
+          import('./pages/login/login-routing.module').then((m) => m.LoginRoutingModule),
+      },
+      {
+        path: '**',
+        redirectTo: 'login',
       },
     ],
   },
-
   {
     path: '**',
     redirectTo: 'login',

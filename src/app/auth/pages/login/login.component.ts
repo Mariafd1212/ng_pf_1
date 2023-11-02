@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,7 @@ export class LoginComponent {
 
   login(): void {
     this.authService.login().subscribe({
-      next: (authUser) => {
+      next: (authUser: any) => {
         this.user = authUser;
         this.password = ''; 
         if (!!authUser) {
