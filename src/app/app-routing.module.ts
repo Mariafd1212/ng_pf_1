@@ -21,10 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
 
-  // {
-  //   path: 'auth',
-  //   component: AuthComponent,
-  // },
+   {
+     path: 'auth',
+     component: AuthComponent,
+  },
   {
     path: '**',
     redirectTo: 'auth/login',

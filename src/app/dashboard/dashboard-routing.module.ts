@@ -20,8 +20,8 @@ import { CoursesDetailComponent } from './pages/courses/components/courses-detai
           },
 
           {
-            path: 'courses',
-            /** hola_mundo */
+            path: 'dashboard/courses',
+
             loadChildren: () =>
               import('./pages/courses/courses.module').then(
                 (m) => m.CoursesModule
