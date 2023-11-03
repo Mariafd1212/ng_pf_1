@@ -7,12 +7,12 @@ import { CoursesDetailComponent } from './components/courses-detail/courses-deta
   imports: [
     RouterModule.forChild([
       {
-        // /course
-        path: '',
+
+        path: 'course',
         component: CoursesComponent,
       },
       {
-        // /course/:id
+
         path: ':id',
         component: CoursesDetailComponent,
       },

@@ -24,9 +24,7 @@ import { UsersRoutingModule } from './users-routing.module';
   providers: [
     UsersService,
     {
-
       provide: UsersService,
-
       useClass: UsersService,
     },
 

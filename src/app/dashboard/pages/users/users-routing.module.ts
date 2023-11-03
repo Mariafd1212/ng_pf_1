@@ -5,10 +5,10 @@ import { UsersDialogComponent } from './components/users-dialog/users-dialog.com
 
 const routes: Routes = [
   {
+
     path: '',
     component: UsersComponent,
   },
-
 ];
 
 @NgModule({

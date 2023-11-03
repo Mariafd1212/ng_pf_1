@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
-
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -9,9 +8,4 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class ToolbarComponent {
   @Output()
   toggleSidebar = new EventEmitter();
-
-  changeLanguage(event: any) {
-    const selectedLanguage = event.value;
-    console.log(`Selected language: ${selectedLanguage}`);
-  }
 }

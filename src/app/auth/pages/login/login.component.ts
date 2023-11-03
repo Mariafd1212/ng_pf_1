@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { User } from 'src/app/dashboard/pages/users/models';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,31 +9,21 @@ import { User } from 'src/app/dashboard/pages/users/models';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  user: string = ''; 
-  password: string = '';
+  emailControl = new FormControl('', [Validators.required, Validators.email]);
+  passwordControl = new FormControl('', [Validators.required]);
+
+  loginForm = new FormGroup({
+    email: this.emailControl,
+    password: this.passwordControl,
+  });
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login(): void {
-    const payload = {
-      email: this.user,
-      password: this.password,
-    };
-
-    this.authService.login(payload).subscribe(
-      (response: User[]) => {
-        if (!response.length) {
-          alert('Usuario o contraseña inválidos');
-        } else {
-          const authUser = response[0];
-          this.authService.updateAuthUser(authUser);
-          localStorage.setItem('token', authUser.token);
-          this.router.navigate(['/dashboard/home']);
-        }
-      },
-      (error) => {
-        alert('Error de conexión');
-      }
-    );
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+    } else {
+      this.authService.login(this.loginForm.getRawValue());
+    }
   }
 }

@@ -6,7 +6,6 @@ import { HomeComponent } from './dashboard/pages/home/home.component';
 import { UsersComponent } from './dashboard/pages/users/users.component';
 import { UserDetailComponent } from './dashboard/pages/users/components/user-detail/user-detail.component';
 import { CoursesComponent } from './dashboard/pages/courses/courses.component';
-import { CoursesDetailComponent } from './dashboard/pages/courses/components/courses-detail/courses-detail.component';
 import { dashboardGuard } from './core/guards/dashboard.guard';
 
 const routes: Routes = [
@@ -22,6 +21,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
 
+  // {
+  //   path: 'auth',
+  //   component: AuthComponent,
+  // },
   {
     path: '**',
     redirectTo: 'auth/login',

@@ -14,7 +14,7 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { Headers20Directive } from './directives/headers20.directive';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,11 +23,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FormErrorsPipe,
     Headers20Directive
     
-    
   ],
   imports: [
     CommonModule
   ],
+  
   exports: [
     MatButtonModule,
     MatIconModule,
@@ -44,7 +44,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FormErrorsPipe,
     Headers20Directive,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    FormsModule
     
     
   ]

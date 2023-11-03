@@ -14,7 +14,7 @@ import { CourseRoutingModule } from './courses-routing.module';
     CoursesComponent,
     CoursesTableComponent,
     CoursesDialogComponent,
-    CoursesDetailComponent
+    CoursesDetailComponent,
   ],
   imports: [CommonModule, SharedModule, CourseRoutingModule],
   providers: [
